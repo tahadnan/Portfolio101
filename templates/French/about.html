@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="language" content="French">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="About Taha Yasser Adnan.">
+    <meta name="google" content="notranslate" />
+    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">  
+    <!-- Disable tap highlight on IE  -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>TYA</title>
+
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body class="">
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+
+    <header>
+      <nav class="navbar  navbar-fixed-top navbar-default">
+          <div class="container">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbar-collapse">
+                  <ul class="nav navbar-nav ">
+                      <li class="language-switch">
+                          <a href="#" class="current-lang">🇫🇷 FR</a>
+                          <ul class="lang-dropdown">
+                              <li><a href="{{ url_for('html_page', lang='en', page_name='about.html') }}" class="en">🇬🇧 English</a></li>
+                              <li><a href="{{ url_for('html_page', lang='fr', page_name='about.html') }}" class="fr">🇫🇷 Français</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="{{ url_for('html_page', lang='fr', page_name='index.html') }}" title="">01 : Acceuil</a></li>
+                      <li><a href="{{ url_for('html_page', lang='fr', page_name='works.html') }}" title="">02 : Projets</a></li>
+                      <li><a href="{{ url_for('html_page', lang='fr', page_name='about.html') }}" title="">03 : À propos</a></li>
+                      <li><a href="{{ url_for('html_page', lang='fr', page_name='contact.html') }}" title="">04 : Contact</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+
+    <div class="section-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="section-container-spacer text-center">
+                <h1 class="h2" id="about-me">03 : À propos de moi</h1>
+              </div>          
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      <h3>Jeune Passionné de Technologie</h3>
+                      <p>Bonjour ! Je suis Taha Yasser Adnan, un développeur Python de 16 ans originaire du Maroc, passionné par la technologie et les mathématiques. Mon parcours en programmation a commencé avec Python, et je suis fasciné par son potentiel pour résoudre des problèmes réels.</p>
+      
+                      <h3>Motivé par un Objectif</h3>
+                      <p>Ce qui me motive vraiment, c'est de créer des projets qui font une différence dans la vie quotidienne des gens. Les possibilités infinies du monde technologique alimentent mon enthousiasme, me faisant souvent programmer pendant des heures avec plaisir. Je crois au pouvoir de la collaboration open-source et je cherche activement des opportunités pour contribuer à la communauté.</p>
+      
+                      <h3>Apprentissage Continu</h3>
+                      <p>En tant que jeune développeur, j'adopte la philosophie de l'apprentissage continu. Chaque jour présente de nouvelles opportunités d'élargir mes connaissances et d'améliorer mes compétences. Ma curiosité technique et mes capacités de résolution de problèmes me poussent à explorer des solutions innovantes et à repousser mes limites en développement logiciel.</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <img src="{{url_for('static' , filename='assets/images/pfp.png')}}" class="img-responsive" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>© TYA 2024-2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        navActivePage();
+    });
+    </script>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

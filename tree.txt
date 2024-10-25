@@ -1,0 +1,35 @@
+.
+├── database.csv
+├── README.md
+├── requirements.txt
+├── server.py
+├── static
+│   ├── android-chrome-192x192.png
+│   ├── android-chrome-512x512.png
+│   ├── apple-touch-icon.png
+│   ├── assets
+│   │   └── images
+│   │       ├── pfp.png
+│   │       └── space.jpg
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── GitHub_Logo.svg
+│   ├── script.js
+│   ├── site.webmanifest
+│   └── style.css
+├── templates
+│   ├── English
+│   │   ├── about.html
+│   │   ├── contact.html
+│   │   ├── index.html
+│   │   ├── thankyou.html
+│   │   └── works.html
+│   └── French
+│       ├── about.html
+│       ├── contact.html
+│       ├── index.html
+│       ├── thankyou.html
+│       └── works.html
+└── tree.txt
+
+7 directories, 26 files

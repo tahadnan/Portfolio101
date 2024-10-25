@@ -3,20 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="language" content="English">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta content="description" name="TYA's projects.">
     <meta name="google" content="notranslate" />
     <meta content="Mashup templates have been developped by Orson.io team" name="author">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">   
     <link rel="manifest" href="static/site.webmanifest">
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
     <title>TYA</title>
 
-    <link href="static/style.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 
 <body class="">
@@ -37,10 +39,17 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav ">
-                        <li><a href="./index.html" title="">01 : Home</a></li>
-                        <li><a href="./works.html" title="">02 : Works</a></li>
-                        <li><a href="./about.html" title="">03 : About me</a></li>
-                        <li><a href="./contact.html" title="">04 : Contact</a></li>
+                        <li class="language-switch">
+                            <a href="#" class="current-lang">🇬🇧 EN</a>
+                            <ul class="lang-dropdown">
+                                <li><a href="{{ url_for('html_page', lang='fr', page_name='works.html') }}" class="en">🇬🇧 English</a></li>
+                                <li><a href="{{ url_for('html_page', lang='fr', page_name='works.html') }}" class="fr">🇫🇷 Français</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ url_for('html_page', lang=session.get('current_language', 'en'), page_name='index.html') }}" title="">01 : Home</a></li>
+                        <li><a href="{{ url_for('html_page', lang=session.get('current_language', 'en'), page_name='works.html') }}" title="">02 : Works</a></li>
+                        <li><a href="{{ url_for('html_page', lang=session.get('current_language', 'en'), page_name='about.html') }}" title="">03 : About me</a></li>
+                        <li><a href="{{ url_for('html_page', lang=session.get('current_language', 'en'), page_name='contact.html') }}" title="">04 : Contact</a></li>
                     </ul>
 
 
@@ -57,13 +66,14 @@
                         <h1 class="h2">02 : Works</h1>
                         <p>Feel free to check all my current projects on GitHub.</p>
                         <a href="https://github.com/tahadnan">
-                            <img src="static/assets/images/GitHub_Logo.svg" alt="GitHub Logo" height="300" width="300">
+                            <img src="{{url_for('static' ,filename='GitHub_Logo.svg')}}" alt="GitHub Logo" height="300" width="300">
                         </a>
 
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
         <footer class="footer-container text-center">
@@ -82,7 +92,7 @@
         });
         </script>
 
-        <script type="text/javascript" src="static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
