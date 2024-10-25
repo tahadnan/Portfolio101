@@ -13,14 +13,14 @@ Welcome to my digital playground! This is where I showcase my coding adventures 
 │   ├── assets/
 │   │   └── images/      # Pretty pictures!
 │   ├── script.js        # JavaScript wizardry ✨
-│   ├── style.css        # Making things look fabulous 💅
+│   ├── style.css        # Making things look fabulous 
 │   └── Various icons    # Fancy icons for all devices
 └── templates/           # The HTML gang
     ├── about.html       # All about yours truly
     ├── contact.html     # Say hi!
     ├── index.html       # The front door
     ├── thankyou.html    # Thanks for dropping a message!
-    └── works.html       # My cool projects
+    └── works.html       # My cool projects (Currently only redirects to my github ^^)
 ```
 
 ## 🌟 The Cool Features
@@ -40,6 +40,7 @@ Welcome to my digital playground! This is where I showcase my coding adventures 
 - **Backend Magic**:
   - Python (🐍 Sssssuper cool!)
   - Flask (because it's lightweight and awesome)
+  - PythonAnywhere (Because it has python in it and it's free)
 
 ## 🎓 Special Thanks
 - Big shoutout to Andrei Neagoie and the ZTM fam for teaching me how to not be scared of dev tools anymore! 
