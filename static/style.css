@@ -99,6 +99,8 @@ button, select {
 }
 button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
     cursor: pointer
 }
 button[disabled], html input[disabled] {
@@ -120,6 +122,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 input[type=search] {
     -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: texfield;
     box-sizing: content-box
 }
 input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
@@ -245,7 +249,8 @@ img {
 .img-responsive {
     display: block;
     max-width: 100%;
-    height: auto
+    height: auto;
+    margin-top: 8rem
 }
 .img-rounded {
     border-radius: 0
@@ -1494,7 +1499,9 @@ textarea.form-control {
     height: auto
 }
 input[type=search] {
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type=date].form-control, input[type=datetime-local].form-control, input[type=month].form-control, input[type=time].form-control {
@@ -3317,7 +3324,9 @@ button.close {
     cursor: pointer;
     background: transparent;
     border: 0;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
 }
 .carousel, .carousel-inner {
     position: relative
@@ -4157,5 +4166,22 @@ textarea {
 .list-icons li {
     float: left;
     margin-right: 5px
+}
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #666;
 }
 /*# sourceMappingURL=main.70a66962.map*/

@@ -3,7 +3,7 @@ import csv
 from datetime import datetime
 from flask import request, redirect
 app = Flask(__name__)
-email_storage = {"current_email": ""}
+name_storage = {"current_name": ""}
 info_storage = {}
 @app.route("/")
 def Home():
@@ -16,7 +16,7 @@ def write_to_csv(data):
     with open('database.csv', mode='a', newline='') as database:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         csv_writer = csv.writer(database,delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        csv_writer.writerow([timestamp, data['email'],data['subject'], data['message']])
+        csv_writer.writerow([timestamp,data['fullname'],data['email'],data['subject'], data['message']])
 
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit():
@@ -24,8 +24,8 @@ def submit():
         try:
             data = request.form.to_dict()
             write_to_csv(data=data)
-            email_storage["current_email"] = request.form.get("email")
-            print(email_storage["current_email"])
+            name_storage["current_name"] = request.form.get("fullname")
+            print(name_storage["current_name"])
             print(data)
             return redirect('thankyou.html')
         except:
@@ -38,5 +38,5 @@ def thankyou():
         # for k,v in info_storage.items():
         #     file.write(f"{k}:{v}")
         file.write(str(info_storage))
-    return render_template("thankyou.html", info=email_storage["current_email"])
+    return render_template("thankyou.html", info=name_storage["current_name"])
 
