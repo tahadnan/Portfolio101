@@ -4183,40 +4183,93 @@ textarea {
 .social-links a:hover {
     color: #666;
 }
+/* Language switcher container */
 .language-switch {
     position: relative;
     display: inline-block;
+    cursor: pointer;
+    padding-bottom: 20px;
 }
 
+/* Current language display */
+.current-lang {
+    padding: 8px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.current-lang:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown menu */
 .lang-dropdown {
     display: none;
     position: absolute;
-    background-color: white;
-    min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 0px 0px 0px 0px;
+    background-color: rgba(15, 15, 15, 0.95);
+    min-width: 140px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    padding: 8px 0;
     z-index: 1;
-    border-radius: 4px;
+    border-radius: 8px;
     right: 0;
+    top: 100%;
+    margin-top: -20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-origin: top right;
+    animation: dropdownFade 0.2s ease-out;
 }
 
+/* Dropdown items */
 .lang-dropdown li {
     display: block;
     width: 100%;
 }
 
 .lang-dropdown a {
-    right: 0;
-    color: black;
-    padding: 12px 16px;
+    color: #ffffff;
+    padding: 10px 16px;
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
 }
 
 .lang-dropdown a:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Show dropdown on hover */
 .language-switch:hover .lang-dropdown {
     display: block;
+}
+
+/* Flag emoji spacing */
+.lang-dropdown a::before {
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* Animation keyframes */
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Active language indicator */
+.lang-dropdown a.active {
+    background-color: rgba(255, 255, 255, 0.05);
 }
