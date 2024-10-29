@@ -40,10 +40,13 @@
           <div class="collapse navbar-collapse" id="navbar-collapse">
               <ul class="nav navbar-nav ">
                   <li class="language-switch">
-                      <a href="#" class="current-lang">🇫🇷 FR</a>
+                      <a href="#" class="current-lang">
+                        <span>🇫🇷</span>
+                        <span>FR</span>
+                      </a>
                       <ul class="lang-dropdown">
                           <li><a href="{{ url_for('html_page', lang='en', page_name='index.html') }}" class="en">🇬🇧 English</a></li>
-                          <li><a href="{{ url_for('html_page', lang='fr', page_name='index.html') }}" class="fr">🇫🇷 Français</a></li>
+                          <li><a href="{{ url_for('html_page', lang='fr', page_name='index.html') }}" class="fr active">🇫🇷 Français</a></li>
                       </ul>
                   </li>
                   <li><a href="{{ url_for('html_page', lang='fr', page_name='index.html') }}" title="">01 : Acceuil</a></li>

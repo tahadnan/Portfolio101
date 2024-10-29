@@ -4183,6 +4183,7 @@ textarea {
 .social-links a:hover {
     color: #666;
 }
+
 /* Language switcher container */
 .language-switch {
     position: relative;
@@ -4226,6 +4227,44 @@ textarea {
     animation: dropdownFade 0.2s ease-out;
 }
 
+/* Mobile optimization */
+@media screen and (max-width: 768px) {
+    .lang-dropdown {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        margin-top: 0;
+        width: 90%;
+        max-width: 300px;
+        transform-origin: bottom center;
+    }
+
+    /* Adjust animation for bottom positioning */
+    @keyframes dropdownFade {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(10px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+    }
+
+    /* Make touch targets larger on mobile */
+    .lang-dropdown a {
+        padding: 14px 16px;
+    }
+
+    /* Adjust current language display for mobile */
+    .current-lang {
+        padding: 12px 16px;
+    }
+}
+
 /* Dropdown items */
 .lang-dropdown li {
     display: block;
@@ -4233,17 +4272,20 @@ textarea {
 }
 
 .lang-dropdown a {
+    position: relative;
+    overflow: hidden;
     color: #ffffff;
     padding: 10px 16px;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .lang-dropdown a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
 }
 
 /* Show dropdown on hover */
@@ -4261,15 +4303,33 @@ textarea {
 @keyframes dropdownFade {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-10px) scale(0.98);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
 /* Active language indicator */
 .lang-dropdown a.active {
     background-color: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #ffffff;
+}
+
+/* Hover underline effect */
+.lang-dropdown a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.lang-dropdown a:hover:after {
+    transform: scaleX(1);
 }
